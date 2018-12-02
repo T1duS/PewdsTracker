@@ -1,4 +1,4 @@
-# PewdsTrakcer
+# PewdsTracker
 Tracks Trash-Series vs PewDiePie
 
 Notifies when Pewds in Danger and plays bitch lasagna when T in danger
