@@ -1,6 +1,7 @@
 from urllib import request
 import subprocess
 import os
+from datetime import datetime
 
 def getsubs(flag = 1): 
 	# flag = 0 means trash series
@@ -24,6 +25,7 @@ def getsubs(flag = 1):
 	return int(lol2)
 
 lastdiff = 0
+lastsec = datetime.now()
 
 while True:
 	tgay = getsubs(0)
@@ -31,7 +33,10 @@ while True:
 	diff = pewds-tgay
 	print(diff)
 	xd = (diff//1000)-(lastdiff//1000)
-	subprocess.Popen(['notify-send', str(diff)])
+	gg = datetime.now()-lastsec
+	if(gg.seconds >= 30):
+		lastsec = datetime.now()
+		subprocess.Popen(['notify-send', str(diff)])
 	if(xd >= 2):
 		os.system("xdg-open bitch_lasagna.mp3")
 		lastdiff = diff
