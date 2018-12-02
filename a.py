@@ -31,6 +31,7 @@ while True:
 	diff = pewds-tgay
 	print(diff)
 	xd = (diff//1000)-(lastdiff//1000)
+	subprocess.Popen(['notify-send', str(diff)])
 	if(xd >= 2):
 		os.system("xdg-open bitch_lasagna.mp3")
 		lastdiff = diff
